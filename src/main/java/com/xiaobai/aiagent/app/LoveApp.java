@@ -2,6 +2,7 @@ package com.xiaobai.aiagent.app;
 
 import com.xiaobai.aiagent.advisor.MyLoggerAdvisor;
 import com.xiaobai.aiagent.advisor.ReReadingAdvisor;
+import com.xiaobai.aiagent.rag.QueryRewriter;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
@@ -30,6 +31,12 @@ public class LoveApp {
 
     @Resource
     private Advisor loveAppRagCloudAdvisor;
+
+    @Resource
+    private VectorStore pgVectorVectorStore;
+
+    @Resource
+    private QueryRewriter queryRewriter;
 
     /**
      * 系统提示词
